@@ -59,11 +59,7 @@ public class BitcoinCoreClient {
         System.out.println("Your balance is: " + responseJsonObj.get("result"));
     }
 
-    public void createNewAddress() throws org.json.simple.parser.ParseException, IOException {
-            /*String[] params = { account };
-            JSONObject json = invokeRPC(UUID.randomUUID().toString(), COMMAND_GET_NEW_ADDRESS, Arrays.asList(params));
-            return (String)json.get("result");*/
-            
+    public void createNewAddress() throws org.json.simple.parser.ParseException, IOException {            
         CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
         credentialsProvider.setCredentials(AuthScope.ANY, new UsernamePasswordCredentials("username", "password"));
         CloseableHttpClient  httpclient = HttpClientBuilder.create().setDefaultCredentialsProvider(credentialsProvider).build();
